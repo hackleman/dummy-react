@@ -1,10 +1,5 @@
 import React from "react";
 
-/*
-  1. shallow merge
-  2. async
-*/
-
 export default class ImageSlider extends React.Component {
   state = {
     images: [
@@ -13,7 +8,8 @@ export default class ImageSlider extends React.Component {
       "https://i.pinimg.com/236x/86/d6/46/86d646ce2f92efd7890843ef5af9e700.jpg",
       "https://i.pinimg.com/236x/f6/4d/d7/f64dd7eb8df298195d61569b9634f982--watercolor-sketch-watercolor-kiwi.jpg"
     ],
-    idx: 0
+    idx: 0,
+    visible: true
   };
 
   handleNext = () => {
@@ -23,22 +19,31 @@ export default class ImageSlider extends React.Component {
   };
 
   render() {
+
     return (
       <div>
-          <button onClick = {() => {
-              this.setState({
-                  idx: this.state.idx - 1
-              })
-          }}>next</button>
-          <img 
-            src = {this.state.images[this.state.idx]} 
-            style = {{
-                width: 100,
-                height: 100
-            }}
-            />
-            <button onClick = {this.handleNext}>next</button>
-            
+          {this.state.visible &&  
+            <div>
+                <button onClick = {() => {
+                    this.setState({
+                        idx: this.state.idx - 1
+                    })
+                }}>prev</button>
+                <img 
+                    src = {this.state.images[this.state.idx]} 
+                    style = {{
+                        width: 100,
+                        height: 100
+                    }}
+                    />
+                    <button onClick = {this.handleNext}>next</button>
+            </div>
+        }   
+        <button onClick = {() => {
+            this.setState({
+                visible: !this.state.visible
+            })
+        }}>show/hide</button>
     </div>
     );
   }
