@@ -1,0 +1,19 @@
+.Layout {
+    height: 40vh;
+    width: 80vw;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+
+    .sidebar {
+        flex-basis: 10rem;
+        flex-grow: 1;
+        background-color: #1f2021;
+      }
+    .not-sidebar {
+        flex-basis: 0;
+        flex-grow: 999;
+        background-color: blue;
+    }
+  }
+

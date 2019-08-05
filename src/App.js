@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 
-// import ImageSlider from './components/Image';
-// import Counter from './components/Counter';
-import TodoList from './components/TodoList';
-// import Form from './components/Form';
-// import User from './components/User';
+import TodoList from './components/Todo/TodoList';
+import Fetch from './components/Fetch/Fetch';
+import Layout from './components/Layout/Layout';
 
 class App extends Component {
 
